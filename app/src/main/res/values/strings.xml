@@ -7,4 +7,5 @@
     <string name="hint_patronymic">Отчество</string>
     <string name="btn_employee">Я ищу работу</string>
     <string name="btn_employer">Я ищу работников</string>
+    <string name="msg_fields_required">Заполните обязательные поля</string>
 </resources>

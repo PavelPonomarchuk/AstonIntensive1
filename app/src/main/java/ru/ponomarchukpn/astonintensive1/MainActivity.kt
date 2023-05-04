@@ -14,14 +14,36 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        //TODO логика работы с интерфейсом
-
         binding.btnEmployee.setOnClickListener {
-            //TODO
+            val user = processInput()
+            user?.let {
+                processRegistration(Registration.EmployeeReg(it))
+                return@setOnClickListener
+            }
+            showRequiredFieldsToast()
         }
 
         binding.btnEmployer.setOnClickListener {
-            //TODO
+            val user = processInput()
+            user?.let {
+                processRegistration(Registration.EmployerReg(it))
+                return@setOnClickListener
+            }
+            showRequiredFieldsToast()
+        }
+    }
+
+    private fun processInput(): User? {
+        val lastName = binding.etLastName.text.toString()
+        val firstName = binding.etFirstName.text.toString()
+        val patronymic = binding.etPatronymic.text.toString().ifBlank {
+            null
+        }
+
+        return if (lastName.isNotBlank() && firstName.isNotBlank()) {
+            User(lastName, firstName, patronymic)
+        } else {
+            null
         }
     }
 
@@ -44,5 +66,13 @@ class MainActivity : AppCompatActivity() {
         regMessage.message?.let {
             Toast.makeText(this, it, Toast.LENGTH_SHORT).show()
         }
+    }
+
+    private fun showRequiredFieldsToast() {
+        Toast.makeText(
+            this,
+            getString(R.string.msg_fields_required),
+            Toast.LENGTH_SHORT
+        ).show()
     }
 }
