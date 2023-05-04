@@ -2,21 +2,39 @@ package ru.ponomarchukpn.astonintensive1
 
 sealed class Registration {
 
-    class EmployerReg(val employer: User) : Registration() {
+    class EmployerReg(private val employer: User) : Registration() {
 
-        fun registerAsEmployer(): String {
-            //TODO
+        fun employerMessage(): String {
+            var message = with(employer) {
+                String.format("%s: %s %s", EMPLOYER_REG, lastName, firstName)
+            }
 
-            return ""
+            employer.patronymic?.let {
+                message = String.format("%s %s", message, it)
+            }
+
+            return message
         }
     }
 
-    class EmployeeReg(val employee: User) : Registration() {
+    class EmployeeReg(private val employee: User) : Registration() {
 
-        fun registerAsEmployee(): String {
-            //TODO
+        fun employeeMessage(): String {
+            var message = with(employee) {
+                String.format("%s: %s %s", EMPLOYEE_REG, lastName, firstName)
+            }
 
-            return ""
+            employee.patronymic?.let {
+                message = String.format("%s %s", message, it)
+            }
+
+            return message
         }
+    }
+
+    companion object {
+
+        private const val EMPLOYEE_REG = "Регистрация работника"
+        private const val EMPLOYER_REG = "Регистрация работодателя"
     }
 }
