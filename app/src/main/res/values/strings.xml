@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">AstonIntensive1</string>
+    <string name="product_name">FindJob</string>
+    <string name="label_register">Регистрация</string>
+    <string name="hint_last_name">Фамилия*</string>
+    <string name="hint_first_name">Имя*</string>
+    <string name="hint_patronymic">Отчество</string>
+    <string name="btn_employee">Я ищу работу</string>
+    <string name="btn_employer">Я ищу работников</string>
 </resources>
