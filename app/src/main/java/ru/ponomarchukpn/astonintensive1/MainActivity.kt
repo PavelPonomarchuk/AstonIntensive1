@@ -84,7 +84,7 @@ class MainActivity : AppCompatActivity() {
         RegistrationMessage().apply {
             message = registrationMessage(reg)
         }.also {
-            showToast(it)
+            showRegistrationToast(it)
         }
     }
 
@@ -95,7 +95,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun showToast(regMessage: RegistrationMessage) {
+    private fun showRegistrationToast(regMessage: RegistrationMessage) {
         regMessage.message?.let {
             Toast.makeText(this, it, Toast.LENGTH_SHORT).show()
         }
