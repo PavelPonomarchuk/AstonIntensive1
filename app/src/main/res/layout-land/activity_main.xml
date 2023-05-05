@@ -6,14 +6,21 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
     <TextView
         android:id="@+id/tv_product_name"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@color/teal_700"
         android:gravity="center"
-        android:paddingTop="10dp"
-        android:paddingBottom="10dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
         android:text="@string/product_name"
         android:textColor="@color/white"
         android:textSize="30sp"
@@ -26,7 +33,7 @@
         android:id="@+id/tv_register_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:text="@string/label_register"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -35,14 +42,14 @@
 
     <EditText
         android:id="@+id/et_last_name"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
-        android:layout_marginEnd="20dp"
-        android:textSize="20sp"
+        android:layout_marginEnd="10dp"
+        android:textSize="18sp"
         android:hint="@string/hint_last_name"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/guideline_vertical"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_register_label"
         android:importantForAutofill="no"
@@ -50,14 +57,14 @@
 
     <EditText
         android:id="@+id/et_first_name"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
-        android:layout_marginEnd="20dp"
-        android:textSize="20sp"
+        android:layout_marginEnd="10dp"
+        android:textSize="18sp"
         android:hint="@string/hint_first_name"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/guideline_vertical"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/et_last_name"
         android:importantForAutofill="no"
@@ -65,14 +72,14 @@
 
     <EditText
         android:id="@+id/et_patronymic"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
-        android:layout_marginEnd="20dp"
-        android:textSize="20sp"
+        android:layout_marginEnd="10dp"
+        android:textSize="18sp"
         android:hint="@string/hint_patronymic"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/guideline_vertical"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/et_first_name"
         android:importantForAutofill="no"
@@ -80,9 +87,9 @@
 
     <Button
         android:id="@+id/btn_employee"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_marginStart="20sp"
         android:layout_marginEnd="20sp"
         android:paddingTop="10dp"
@@ -90,13 +97,13 @@
         android:textSize="20sp"
         android:text="@string/btn_employee"
         android:backgroundTint="@color/teal_700"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@id/guideline_vertical"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_patronymic" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_register_label" />
 
     <Button
         android:id="@+id/btn_employer"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:layout_marginStart="20sp"
@@ -106,7 +113,7 @@
         android:textSize="20sp"
         android:text="@string/btn_employer"
         android:backgroundTint="@color/teal_700"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@id/guideline_vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_employee" />
 
